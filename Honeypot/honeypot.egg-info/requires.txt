@@ -1,0 +1,6 @@
+Flask
+waitress
+mysql-connector
+mysql-connector-python
+minetext
+paramiko

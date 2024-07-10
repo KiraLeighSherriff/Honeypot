@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Honeypot Login web application</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Honeypot Login Page">
+    <meta name="author" content="Kira Leigh Sherriff">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: 808080; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: #FFF; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #FFA500; 
+        } 
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000;
+        }
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: 280px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #FFA500; 
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <?php
+        require_once('login.php');
+        echo $title;
+        ?>
+        <p1 style="color:red; font-size: 14px;">  <?php require_once('login.php'); echo $info?> </p1>
+        <form method="post" action=" ">
+            <br>
+            
+            <label for="username">Username</label>
+            <input type="text"  name="username" title="Username should'nt contain Special Character">
+            <label style="color:red; font-size: 12px;" for="username"> <?php require_once('login.php'); echo $error_username; ?> </label>
+
+            
+            <label for="password">Password</label>
+            <input type="password"  name="password" title="Password should contain: 
+
+At least one UpperCase,  
+At Least one lowerCase,  
+At Least one Number, 
+At Least one Special Character
+And more then 8 Characters ">
+
+            <label style="color:red; font-size: 12px;" for="Password"> <?php require_once('login.php'); echo $error_password; ?> </label>
+
+                <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

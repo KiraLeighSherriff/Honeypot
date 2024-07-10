@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honeypot</title>
+  <meta name="description" content="Honeypot Home Page">
+  <meta name="author" content="Kira Leigh Sherriff">
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #3E454B;
+    overflow: hidden;
+    list-style-type: none;
+  }
+   
+  .navbar li {
+    float: left;
+  }
+  
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+  }
+
+  .info {
+    width: 50%; 
+    height: 100%;
+    overflow: auto;
+    padding: 20px; 
+    margin-top: 20px;
+    border: 1px solid; 
+    background-color: #f5efef; 
+    font-size: 18px; 
+    text-align: center;
+    float: right;
+    box-sizing: border-box;
+}
+  
+  .navbar li a:hover {
+    background-color: #dedede;
+    color: black;
+  }
+
+  .tablelogin{
+    width: 50%;
+    overflow: auto;
+    border: 1px solid;
+  }
+
+  .tablelogin th{
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    color: white;
+    vertical-align:center;
+    background-color: #FFA500;
+  }
+
+  .tablelogin tr td{
+    font-size: 18px;
+    text-align: center;
+    background-color: #f5efef
+  }
+
+  .tablecon th {
+    font-size: 20px;
+    padding: 8px;
+    width: 200px;
+    color: white;
+    background-color: #FFA500;
+}
+
+.tablecon tr td {
+    font-size: 18px;
+    text-align: center;
+    background-color: #f5efef;
+}
+
+  </style>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <!-- To send user to that web page -->
+        <li><a href="index.php">Home</a></li>
+        <li><a href="SSHLog.php">SSH</a></li>
+        <li><a href="TelnetLog.php">Telnet</a></li>
+        <li><a href="HTTPLog.php">HTTP</a></li>
+        <li><a href="FTPLog.php">FTP</a></li>
+        <li><a href="AllPortLog.php">All Ports</a></li>
+        <li style="float: right"> <a href="logout.php" style="background-color: #FFA500">Logout</a></li>
+        <li style="float: right"> <a href="Settings.php">Settings</a></li>
+    </nav>
+
+
+    <h1 style="color: #FFA500; text-align: center;"> Honeypot Home Page </h1>
+    <h2 style="color: #FFA500; text-align: center;"> Data Summary </h2>
+
+    <br>
+
+    <table class="tablelogin" style="float: right;">
+        <tr>
+            <th>Port</th>
+            <th>Count</th>
+        </tr>     
+            <?php require_once('index.php');
+            $start->PortPop();
+            ?>
+
+    <table class="tablelogin">
+        <tr>
+            <th>Client IP</th>
+            <th>Count</th>
+        </tr>     
+            <?php require_once('index.php');
+            $start->ClientIPPop();
+            ?>
+            
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <hr>
+
+    <div class="info">
+        <h3 style="color: #FFA500;">SSH Most Common Username</h3>
+        <?php require_once('index.php');
+        $start->Usernamessh();
+    ?>
+
+    </div>
+
+    <div class="info">
+        <h3 style="color: #FFA500;">SSH Most Common Password</h3>
+        <?php require_once('index.php');
+        $start->Passwordssh();
+    ?>
+    </div>
+
+
+    <div class="info">
+        <h3 style="color: #FFA500;">Telnet Most Common Username</h3>
+        <?php require_once('index.php');
+        $start->Usernametelnet();
+    ?>
+
+    </div>
+
+    <div class="info">
+        <h3 style="color: #FFA500;">Telnet Most Common Password</h3>
+        <?php require_once('index.php');
+        $start->PasswordTelnet();
+    ?>
+    </div>
+
+    <div class="info">
+        <h3 style="color: #FFA500;">HTTP Most Common Username</h3>
+        <?php require_once('index.php');
+        $start->Usernamehttp();
+    ?>
+
+    </div>
+
+
+    <div class="info">
+        <h3 style="color: #FFA500;">HTTP Most Common Password</h3>
+        <?php require_once('index.php');
+        $start->Passwordhttp();
+    ?>
+    </div>
+
+    <div class="info">
+        <h3 style="color: #FFA500;">FTP Most Common Username</h3>
+        <?php require_once('index.php');
+        $start->Usernameftp();
+    ?>
+
+    </div>
+
+    <div class="info">
+        <h3 style="color: #FFA500;">FTP Most Common Password</h3>
+        <?php require_once('index.php');
+        $start->Passwordftp();
+    ?>
+    </div>
+
+</body>
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+    "ssh_login": {
+        "ssh_username": "root",
+        "ssh_password": "root"
+    }
+}

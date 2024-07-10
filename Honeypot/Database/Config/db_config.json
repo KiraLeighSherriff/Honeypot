@@ -1,0 +1,29 @@
+{
+    "database_config": {
+        "db_host": "localhost",
+        "db_user": "root",
+        "db_port": "3306",
+        "db_passwd": "root",
+        "db_name": "honeypot"
+    },
+    "table_names": {
+        "table_1": "all_connect",
+        "table_2": "http_login",
+        "table_3": "telnet_login",
+        "table_4": "telnet_command",
+        "table_5": "FTP_login",
+        "table_6": "ssh_login",
+        "table_7": "ssh_command",
+        "table_8": "web_account"
+    },
+    "tables_to_check": [
+        "all_connect",
+        "http_login",
+        "telnet_login",
+        "telnet_command",
+        "FTP_login",
+        "ssh_login",
+        "ssh_command",
+        "web_account"
+    ]
+}

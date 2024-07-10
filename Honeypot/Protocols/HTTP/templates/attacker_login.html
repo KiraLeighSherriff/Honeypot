@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Login Page">
+    <meta name="author" content="Kira Leigh Sherriff">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            /* Background color */
+            background-color: ff3535; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: #FFF; 
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, p {
+            text-align: center;
+            color: #f77f65; 
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000;
+        }
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: 280px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #f77f65; 
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Login </h1>
+        <form action="" method="POST">
+            <label for="username">Username</label>
+            <input type="text" username="username" name="username">
+            
+            <label for="password">Password</label>
+            <input type="password" password="password" name="password">
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
